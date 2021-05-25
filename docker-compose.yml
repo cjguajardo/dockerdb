@@ -4,7 +4,7 @@ volumes:
   dev-db:
 
 services:
-  db:
+  mysqldb:
     image: mysql:5.7.22
     container_name: mysqldb
     restart: unless-stopped
