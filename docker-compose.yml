@@ -1,0 +1,25 @@
+version: '3.7'
+
+volumes:
+  dev-db:
+
+services:
+  db:
+    image: mysql:5.7.22
+    container_name: mysqldb
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    volumes:
+      - dev-db:/var/lib/mysql
+      - ./mysql-local.cnf:/etc/mysql/my.cnf
+    environment:
+      MYSQL_USER: devuser
+      MYSQL_ROOT_PASSWORD: csEPvC9ybfXCp9Eq
+      MYSQL_PASSWORD: t7UmvM6Yf9x4mZju
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+
